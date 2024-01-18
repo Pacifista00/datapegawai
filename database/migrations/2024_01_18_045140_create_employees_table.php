@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->string('id_number');
             $table->string('name');
-            $table->string('adrress');
+            $table->string('address');
             $table->foreignId('position_id')->constrained();
-            $table->date('date_of_entry');
+            $table->date('entry_date');
+            $table->date('out_date')->nullable();
             $table->timestamps();
         });
     }
